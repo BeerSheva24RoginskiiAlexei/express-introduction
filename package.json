@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "config": "^3.3.12",
+    "express": "file:",
+    "joi": "^17.13.3",
+    "joi-password": "^4.2.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.9"
+  },
+  "name": "express",
+  "version": "1.0.0",
+  "main": "src/controller/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/controller/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module"
+}
