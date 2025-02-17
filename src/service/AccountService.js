@@ -96,14 +96,14 @@ function getExpiration() {
 const accountingService = new AccountsService();
 export default accountingService;
 export function getExpirationIn() {
-    const expiredInStr = config.get("accounting.expiredIn");
-    const amount = expiredInStr.split(/\D/)[0];
-    const parseArray = expiredInStr.split(/\d/);
-    const index = parseArray.findIndex((e) => !!e.trim());
-    const unit = parseArray[index];
-    const unitValue = time_units[unit];
-    if (!unitValue) {
-        throw createError(500, `Wrong configuration: unit ${unit} doesn't exist`);
-    }
-    return amount * unitValue ;
+  const expiredInStr = config.get("accounting.expiredIn");
+  const amount = expiredInStr.split(/\D/)[0];
+  const parseArray = expiredInStr.split(/\d/);
+  const index = parseArray.findIndex((e) => !!e.trim());
+  const unit = parseArray[index];
+  const unitValue = time_units[unit];
+  if (!unitValue) {
+    throw createError(500, `Wrong configuration: unit ${unit} doesn't exist`);
+  }
+  return amount * unitValue;
 }

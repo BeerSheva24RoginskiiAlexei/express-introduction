@@ -9,7 +9,7 @@ export function authenticate(paths) {
       if (authHeader.startsWith(BEARER)) {
         jwtAuthentication(req, authHeader);
       } else if (authHeader.startsWith(BASIC)) {
-        basicAuthentication(req);
+        basicAuthentication(req, authHeader);
       }
     }
 
@@ -25,7 +25,7 @@ function jwtAuthentication(req, authHeader) {
   } catch (error) {}
 }
 function basicAuthentication(req) {
-  //TODO
+  const userNamePassword = authHeader.substring(BASIC.length);
 }
 export function auth(req, res, next) {
   if (!req.user) {
